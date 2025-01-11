@@ -11,13 +11,21 @@ const createManyPeople = (arrayOfPeople) => {
 };
 
 
-const findPeopleByName = (name) => {
-  return Person.find({ name: name });
+const findOneByFood = (food) => {
+  Person.findOne({ favoriteFoods: food }, (err, data) => {
+    if (err) return console.error(err);
+    console.log('Personne trouvée :', data);
+  });
 };
 
 
-const findOneByFood = (food) => {
-  return Person.findOne({ favoriteFoods: food });
+
+
+const findPeopleByName = (name) => {
+  Person.find({ name }, (err, data) => {
+    if (err) return console.error(err);
+    console.log('Personnes trouvées :', data);
+  });
 };
 
 
