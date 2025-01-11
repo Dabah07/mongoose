@@ -1,8 +1,8 @@
-const connectDB = require('./config/database');
+const connectedDB = require('./config/database');
 const personController = require('./controllers/personController');
 
 
-connectDB();
+connectedDB();
 
 
 async function exec_checkpoint_methods() {
